@@ -1,0 +1,309 @@
+.item-container{
+    display:flex;
+    margin-bottom:50px;
+    
+    .form-container{
+        width:30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .item-form{
+        margin-top: 140px;
+        width:250px;
+        background: $Greenish;
+        padding:20px;
+        border-radius: 16px;
+        display:block;
+        .welcome-message{
+            text-align:center;
+            margin-bottom:15px;
+            font-size:20px;
+            color:white;
+            font-weight:500;
+        }
+        .date-label{
+            margin: 0 0 5px 5px;
+            color:white;
+            font-size:14px;
+        }
+        input{
+            width:100%;
+            border: 2px solid black;
+            border-radius:16px;
+            padding: 10px 10px;
+            margin-bottom:8px;
+            font-size: 16px;
+        }
+        .form-control{
+            width:100%;
+            border: 1px solid black;
+            border-radius:0;
+            padding:10px;
+            font-size:16px;
+            margin-bottom:10px;
+            background:white;
+            &:focus{
+                outline:none;
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            }
+        }
+        .submit-item-btn-container{
+            button{
+                font-weight:600;
+                padding: 10px 10px;
+                margin:20px 0;
+                width:100%;
+                font-size: 16px;
+                border-radius: 16px;
+                border: 2px solid black;
+                color:black;
+                transition: ease-out all 0.2s;
+                &:hover{
+                    color:white;
+                    background-color: #062829;
+                    cursor: pointer;
+                }
+            }
+        }
+        .error-container{
+            .error{
+                font-size:14px;
+                padding:5px;
+                margin:px 0;
+                color:$mainRed;
+                background-color: $mainLightRed;
+            }
+        }
+    }
+    .trashbin-container{
+        margin-top:40px;
+        @media (max-width: 1300px) {
+            margin-top: 10px;
+        }
+        .trashbin-box{
+            height:60px;
+            width:60px;
+            margin:50% auto auto ;
+            svg{
+                height:100%;
+                width:100%;
+                color:$mainGrey;
+            }
+        }
+    }
+    .items{
+        margin-top:100px;
+        margin-left:auto;
+        margin-right:auto;
+        display:flex;
+        width:70%;
+        flex-direction: column;
+        .message{
+            margin-left:20px;
+            text-align:start;
+        }
+        .items-container{
+            margin-right:30px;
+            display:flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            .item-box{
+                background-repeat: no-repeat;
+                background-size: cover; 
+                display:flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                width:240px;
+                height: 210px;
+                margin: 15px;
+                padding:40px 25px 40px 55px;
+                position:relative;
+                cursor: move; /* fallback if grab cursor is unsupported */
+                cursor: grab;
+                cursor: -moz-grab;
+                cursor: -webkit-grab;
+                &:active{
+                    cursor: grabbing;
+                    cursor: -moz-grabbing;
+                    cursor: -webkit-grabbing;
+                }
+                .item-box-link{
+                    width:100%;
+                    display:flex;
+                    align-items: flex-start;
+                    flex-direction:column;
+                    .item-name{
+                        width:100%;
+                        font-size: 18px;
+                        letter-spacing:1px;
+                        padding-bottom:5px;
+                        font-weight:bold;
+                    }
+                    }
+                    .item-quantity{
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                        font-weight:500;
+                        text-align: center;
+                    }
+                    .low-quantity-box{
+                        margin-bottom: 5px;
+                        .message-box{
+                            font-size:14px;
+                            color: $mainRed;
+                            display:flex;
+                            align-items: center;
+                            .icon{
+                                margin-right:5px;
+                            }
+                        }
+                    }
+                    .item-quantity{
+                        text-align: left;
+                        font-size: 15px;
+                        margin-bottom: 15px;
+                    }
+                }
+                .item-box-expiration{
+                    font-size:14px;
+                    margin-bottom:10px;
+                    }
+                    .gear-box{
+                       line-height: 1;
+                       display:flex;
+                       align-items: center;
+                       justify-content: center;
+                       transition: 0.1s ease all;
+                       font-weight:500;
+                           &:hover{
+                               color: black;
+                               cursor:pointer;
+                               font-weight:bold;
+                           }
+                .expired {
+                    color: $mainRed;
+                }
+            }
+        }
+    }
+}
+
+.recipes-container{
+    width:100%;
+    margin:0;
+    .fetch-rec-button-box{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom:70px;
+        button{
+            padding:10px;
+            border-radius:30px;
+            border:2px solid $mainRed;
+            background:white;
+            transition: ease-out all 0.2s;
+            color:$mainRed;
+            font-size:18px;
+            &:hover{
+                background: $mainRed;
+                color:white;
+                border: 2px solid $mainRed;
+                cursor:pointer;
+            }
+        }
+    }
+    .recipes-box{
+        margin: 30px 100px 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: start;
+        justify-content: space-between;
+        .recipe-card{
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius:16px;
+            width:20%;
+            margin:20px;
+            .recipe-image-box{
+                width:100%;
+                height:100%;
+                position:relative;
+                img{
+                    width:100%;
+                    position:top;
+                    object-fit: cover;
+                }
+                .ok{
+                    color:green;
+                    position:absolute;
+                    right:10px;
+                    top:10px;
+                    font-size:30px;
+                }
+                .not-ok{
+                    color:$mainRed;
+                    position:absolute;
+                    right:10px;
+                    top:10px;
+                    font-size:30px;
+                }
+
+            }
+            .card-info{
+                padding:10px;
+                .recipe-title-box{
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+                .from-kitchen-box{
+                    margin-bottom:5px;
+                    .kitchen-item-yes{
+                        color:$mainGreen;
+                        font-size:16px;
+                    }
+                }
+                .missing-items-box{
+                    margin-top:15px;
+                    padding-bottom:10px;
+                    .kitchen-item-no{
+                        a {
+                            color:$mainRed;
+                            font-size:16px;
+                        }
+                    }
+                    .message{
+                        margin-top:5px;
+                    } 
+                }
+                .map-icon-container{
+                    display:flex;
+                    align-items: center;
+                    margin:10px 0;
+                    color:$mainGrey;
+                    transition: 0.3s ease all;
+                    .map-icon{
+                        font-size:28px;
+                        color:$lightGreyPlaceholder;
+                    }
+                    .message{
+                        font-size:18px;
+                        margin-left:5px
+                    }
+                    &:hover{
+                        color:black;
+                        cursor:pointer;
+                        .map-icon{
+                            color:black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+   
